@@ -1,28 +1,18 @@
-const sequence: number[] = [];
-let sum = 0;
+const limit = 4000000;
+let firstTerm: number = 1;
+let secondTerm: number = 2;
+// 最初の二つの要素は決定しているためすでに2を入れている
+let sumOfEvenTerm = 2;
 
-function condition(sequence: number[]): boolean {
-  const limit = 4000000;
-  // 配列が要素数が0, 1だったらtrueを返す
-  return sequence.length < 2 || sequence[sequence.length - 1] < limit;
+while (firstTerm + secondTerm < limit) {
+  const newTerm = firstTerm + secondTerm;
+  if (newTerm % 2 === 0) {
+    sumOfEvenTerm = sumOfEvenTerm + newTerm;
+  }
+  firstTerm = secondTerm;
+  secondTerm = newTerm;
 }
 
-while (condition(sequence)) {
-  let newValue: number;
-  if (sequence.length === 0) {
-    newValue = 1;
-  } else if (sequence.length === 1) {
-    newValue = 2;
-  } else {
-    newValue = sequence[sequence.length - 2] + sequence[sequence.length - 1];
-  }
-
-  if (newValue % 2 === 0) {
-    sum = sum + newValue;
-  }
-  sequence.push(newValue);
-}
-
-console.log(sum);
+console.log(sumOfEvenTerm);
 
 export {};
