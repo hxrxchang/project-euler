@@ -1,3 +1,5 @@
+// https://projecteuler.net/problem=1
+
 let sum = 0;
 
 for (let i = 0; i < 1000; i++) {
@@ -7,5 +9,3 @@ for (let i = 0; i < 1000; i++) {
 }
 
 console.log(sum);
-
-export {};

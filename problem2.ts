@@ -1,3 +1,4 @@
+// https://projecteuler.net/problem=2
 const limit = 4000000;
 let firstTerm: number = 1;
 let secondTerm: number = 2;
@@ -14,5 +15,3 @@ while (firstTerm + secondTerm < limit) {
 }
 
 console.log(sumOfEvenTerm);
-
-export {};
